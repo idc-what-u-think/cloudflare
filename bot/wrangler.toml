@@ -1,1 +1,28 @@
+name = "quantumx-bot"
+main = "index.js"
+compatibility_date = "2024-01-01"
 
+# D1 Database Binding
+[[d1_databases]]
+binding = "db"
+database_name = "quantumx-database"
+database_id = "c02fa26d-a774-4720-93db-139b691d52c3"
+
+# Environment Variables
+[vars]
+ENVIRONMENT = "production"
+
+# Cron Triggers (Optional - for scheduled tasks)
+[triggers]
+crons = [
+  "0 */6 * * *",  # Every 6 hours - update bot stats
+  "0 0 * * *"     # Every day at midnight - cleanup old data
+]
+
+# Build Configuration
+[build]
+command = "npm install"
+
+# Compatibility Flags
+[compatibility_flags]
+nodejs_compat = true
